@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Static Code Analysis - NVRZSec Labs</title>
+  <title>SonarQube + GitLab CI/CD - NVRZSec Labs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
@@ -14,7 +14,7 @@
       padding: 2rem;
     }
 
-    h1 {
+    h1, h2, h3 {
       color: #3ca6a6;
       text-shadow: 0 0 8px rgba(60, 166, 166, 0.5);
     }
@@ -34,38 +34,95 @@
       border-radius: 6px;
       overflow-x: auto;
     }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    code {
+      background: #1e1e1e;
+      padding: 2px 4px;
+      border-radius: 4px;
+      color: #f39c12;
+    }
+
+    .emoji {
+      font-size: 1.1em;
+      margin-right: 6px;
+    }
   </style>
 </head>
 <body>
-  <h1>Static Code Analysis</h1>
-  <p>This write-up covers the basics and tools involved in static code analysis, a technique for finding security vulnerabilities without executing the code.</p>
 
-  <h2>Overview</h2>
-  <p>Static code analysis is performed by examining source code or binaries to detect issues like:</p>
+  <h1>🔐 Static Code Analysis Lab: SonarQube + GitLab CI/CD</h1>
+  <p>
+    As part of my upskilling in secure DevOps, I completed a hands-on lab focused on integrating SonarQube with GitLab CI/CD to perform static code analysis on a full JavaScript application. The project, called <strong>Noterdamn</strong>, simulates real-world application code management, threat modeling, and secure CI/CD practices.
+  </p>
+
+  <h2>🧰 Tools & Technologies Used</h2>
   <ul>
-    <li>Hardcoded credentials</li>
-    <li>Unvalidated input</li>
-    <li>Unsafe functions</li>
-    <li>Potential logic flaws</li>
+    <li>SonarQube (Static Code Analyzer)</li>
+    <li>GitLab CI/CD</li>
+    <li>JavaScript (Node.js)</li>
+    <li>YAML & GitLab Web IDE</li>
+    <li>JWT Security Analysis</li>
+    <li>OWASP Top 10 Awareness</li>
   </ul>
 
-  <h2>Tools Used</h2>
+  <h2>🎯 Project Goals</h2>
   <ul>
-    <li><strong>Bandit</strong> (Python)</li>
-    <li><strong>SonarQube</strong></li>
-    <li><strong>Semgrep</strong></li>
-    <li><strong>Checkmarx / Fortify</strong></li>
+    <li>Integrate SonarQube with a GitLab-managed JS codebase</li>
+    <li>Automatically scan new code via GitLab pipelines</li>
+    <li>Identify and remediate vulnerabilities before deployment</li>
+    <li>Map findings to OWASP Top 10 categories like A2 (Cryptographic Failures) and A5 (Broken Access Control)</li>
   </ul>
 
-  <h2>Example Output</h2>
-  <pre>
->>> bandit myscript.py
-[bandit]	INFO	running on Python 3.9.2
->> Issue: Use of insecure MD5 hash function.
-   Severity: Medium   Confidence: High
-   Location: myscript.py:24
-  </pre>
+  <h2>🧠 Key Skills Demonstrated</h2>
+
+  <h3>🔎 Static Code Analysis Integration</h3>
+  <ul>
+    <li>Created a <code>sonar-project.properties</code> file and configured a <code>.gitlab-ci.yml</code> pipeline script</li>
+    <li>Removed non-compatible pipeline stages (e.g. <code>sonarqube-vulnerability-report</code>) to support the self-hosted GitLab instance</li>
+    <li>Successfully triggered SonarQube scans on every push to <code>main</code></li>
+  </ul>
+
+  <h3>📊 Vulnerability Discovery & Prioritization</h3>
+  <ul>
+    <li>Use of weak/unsafe algorithms in JWT signature verification</li>
+    <li>Hard-coded shared secrets vulnerable to brute-force attacks</li>
+    <li>Command Injection risk from unsanitized shell command execution</li>
+  </ul>
+
+  <h3>🛠️ Secure Code Remediation</h3>
+  <ul>
+    <li>Reviewed Security Hotspots flagged by SonarQube</li>
+    <li>Validated and merged secure fixes from a feature branch (<code>Supersecured</code>) into <code>main</code></li>
+    <li>Verified that all prior vulnerabilities were resolved post-merge with updated SonarQube scans</li>
+  </ul>
+
+  <h3>🔐 Secure Coding Practices</h3>
+  <ul>
+    <li>Applied SonarQube’s code examples and best-practice guidelines to refactor insecure implementations</li>
+    <li>Recommended pipeline improvements like excluding test scripts via <code>sonar.tests</code></li>
+  </ul>
+
+  <h2>📈 Outcome</h2>
+  <ul>
+    <li>The pipeline successfully ran automated security scans using SonarQube</li>
+    <li>Previously critical security issues were remediated and verified through updated scans</li>
+    <li>Quality Gates were passed with no new high-severity issues introduced</li>
+    <li>Demonstrated ability to shift security left and improve code quality in real-world workflows</li>
+  </ul>
+
+  <h2>💡 Takeaways</h2>
+  <p>This exercise reinforced my practical skills in:</p>
+  <ul>
+    <li>DevSecOps pipeline development</li>
+    <li>Security-first coding</li>
+    <li>Using tools like SonarQube to bring visibility and automation to code quality and vulnerability tracking</li>
+  </ul>
 
   <p><a href="../index.html">&larr; Back to home</a></p>
+
 </body>
 </html>
