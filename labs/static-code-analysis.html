@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Static Code Analysis - NVRZSec Labs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #121212;
+      color: #e0e0e0;
+      line-height: 1.6;
+      padding: 2rem;
+    }
+
+    h1 {
+      color: #3ca6a6;
+      text-shadow: 0 0 8px rgba(60, 166, 166, 0.5);
+    }
+
+    a {
+      color: #5dade2;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    pre {
+      background: #1e1e1e;
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Static Code Analysis</h1>
+  <p>This write-up covers the basics and tools involved in static code analysis, a technique for finding security vulnerabilities without executing the code.</p>
+
+  <h2>Overview</h2>
+  <p>Static code analysis is performed by examining source code or binaries to detect issues like:</p>
+  <ul>
+    <li>Hardcoded credentials</li>
+    <li>Unvalidated input</li>
+    <li>Unsafe functions</li>
+    <li>Potential logic flaws</li>
+  </ul>
+
+  <h2>Tools Used</h2>
+  <ul>
+    <li><strong>Bandit</strong> (Python)</li>
+    <li><strong>SonarQube</strong></li>
+    <li><strong>Semgrep</strong></li>
+    <li><strong>Checkmarx / Fortify</strong></li>
+  </ul>
+
+  <h2>Example Output</h2>
+  <pre>
+>>> bandit myscript.py
+[bandit]	INFO	running on Python 3.9.2
+>> Issue: Use of insecure MD5 hash function.
+   Severity: Medium   Confidence: High
+   Location: myscript.py:24
+  </pre>
+
+  <p><a href="../index.html">&larr; Back to home</a></p>
+</body>
+</html>
