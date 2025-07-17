@@ -4,13 +4,93 @@
   <meta charset="UTF-8">
   <title>NVRZSec Labs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #0d0d0d;
+      color: #39ff14; /* bright neon green */
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #111;
+      padding: 2rem 1rem;
+      text-align: center;
+      box-shadow: 0 0 10px #00ffcc;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.8rem;
+      color: #00ffe1;
+      text-shadow: 0 0 10px #00ffe1, 0 0 20px #00ffe1;
+    }
+
+    p {
+      text-align: center;
+      color: #ff00ff; /* neon magenta */
+      font-size: 1.2rem;
+      text-shadow: 0 0 5px #ff00ff;
+    }
+
+    ul {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    li {
+      background-color: #1a1a1a;
+      margin: 0.5rem 0;
+      padding: 1rem;
+      border-left: 4px solid #00ffcc;
+      border-radius: 8px;
+      transition: all 0.3s;
+      box-shadow: 0 0 10px #00ffcc20;
+    }
+
+    li:hover {
+      background-color: #222;
+      box-shadow: 0 0 15px #00ffcc80;
+    }
+
+    a {
+      text-decoration: none;
+      color: #39ff14; /* neon green */
+      font-weight: bold;
+      font-size: 1.1rem;
+      text-shadow: 0 0 5px #39ff14;
+    }
+
+    a:hover {
+      color: #ffffff;
+      text-shadow: 0 0 10px #ffffff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+      border-top: 1px solid #222;
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to NVRZSec</h1>
-  <p>Writeups and notes from my Cybrary labs.</p>
+  <header>
+    <h1>NVRZSEC</h1>
+    <p>Writeups and notes from cybersecurity labs.</p>
+  </header>
+
   <ul>
     <li><a href="labs/threat-modeling.html">Threat Modeling</a></li>
     <li><a href="labs/deploy-config-firewalls.html">Deploying and Configuring Firewalls</a></li>
   </ul>
+
+  <footer>
+    &copy; 2025 NVRZSec Labs
+  </footer>
 </body>
 </html>
