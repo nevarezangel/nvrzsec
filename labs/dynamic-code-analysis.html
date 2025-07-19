@@ -2,17 +2,130 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Dynamic Code Analysis - NVRZSec Labs</title>
+  <title>ZAP Dynamic Scanning + GitLab CI/CD - NVRZSec Labs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    body { background: #121212; color: #e0e0e0; font-family: 'Courier New', monospace; padding: 2rem; line-height: 1.6; }
-    h1 { color: #3ca6a6; }
-    a { color: #5dade2; }
+    body {
+      margin: 0;
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #121212;
+      color: #e0e0e0;
+      line-height: 1.6;
+      padding: 2rem;
+    }
+
+    h1, h2, h3 {
+      color: #3ca6a6;
+      text-shadow: 0 0 8px rgba(60, 166, 166, 0.5);
+    }
+
+    a {
+      color: #5dade2;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    pre {
+      background: #1e1e1e;
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    code {
+      background: #1e1e1e;
+      padding: 2px 4px;
+      border-radius: 4px;
+      color: #f39c12;
+    }
+
+    .emoji {
+      font-size: 1.1em;
+      margin-right: 6px;
+    }
   </style>
 </head>
 <body>
-  <h1>Dynamic Code Analysis</h1>
-  <p>Runtime inspection techniques to find vulnerabilities as code executes in controlled environments.</p>
-  <p><a href="../index.html">&larr; Back to Home</a></p>
+
+  <h1>🔐 ZAP Dynamic Scanning Lab: Automating Security Scans in GitLab CI/CD</h1>
+  <p>
+    As part of my upskilling in secure DevOps, I completed a hands-on lab focused on integrating the ZAP (Zed Attack Proxy) dynamic scanning tool with GitLab CI/CD. The project, called <strong>BrokenCrystals</strong>, is a vulnerable application designed to simulate real-world security scenarios and help reinforce best practices in automated vulnerability scanning.
+  </p>
+
+  <h2>🧰 Tools & Technologies Used</h2>
+  <ul>
+    <li>ZAP (Zed Attack Proxy) for Dynamic Application Security Testing (DAST)</li>
+    <li>GitLab CI/CD for pipeline automation</li>
+    <li>Docker for containerized scanning environments</li>
+    <li>YAML & GitLab Web IDE</li>
+    <li>OWASP Top 10 Vulnerabilities</li>
+    <li>Dynamic Web Application Scanning Techniques</li>
+  </ul>
+
+  <h2>🎯 Project Goals</h2>
+  <ul>
+    <li>Integrate ZAP dynamic scanning with GitLab CI/CD to automatically scan deployed applications</li>
+    <li>Identify vulnerabilities like Cross-Site Scripting (XSS), Remote File Inclusion (RFI), and insecure HTTP headers</li>
+    <li>Use ZAP's automated scanning and reporting features to reduce manual security testing overhead</li>
+    <li>Map vulnerabilities to OWASP Top 10 categories such as A3 (Sensitive Data Exposure) and A7 (Cross-Site Scripting)</li>
+  </ul>
+
+  <h2>🧠 Key Skills Demonstrated</h2>
+
+  <h3>🔎 ZAP Integration in CI/CD</h3>
+  <ul>
+    <li>Created a custom ZAP scan plan in YAML format for automated vulnerability testing</li>
+    <li>Configured GitLab CI/CD pipeline to trigger dynamic scans post-deployment to the staging environment</li>
+    <li>Used Docker containers to run the ZAP scanning engine in the GitLab pipeline</li>
+  </ul>
+
+  <h3>📊 Vulnerability Discovery & Prioritization</h3>
+  <ul>
+    <li>Discovered XSS vulnerabilities due to lack of proper content security policies (CSP)</li>
+    <li>Uncovered Remote File Inclusion (RFI) vulnerability that could be exploited for remote code execution</li>
+    <li>Identified missing or misconfigured HTTP security headers, like Content-Security-Policy (CSP) and X-Content-Type-Options</li>
+  </ul>
+
+  <h3>🛠️ Secure Code Remediation</h3>
+  <ul>
+    <li>Reviewed ZAP reports and identified vulnerable areas in the codebase</li>
+    <li>Mitigated XSS by adding proper CSP headers to the application’s HTTP responses</li>
+    <li>Closed the RFI vulnerability by sanitizing user inputs and preventing the inclusion of external URLs</li>
+  </ul>
+
+  <h3>🔐 Best Practices in Web App Security</h3>
+  <ul>
+    <li>Configured ZAP’s active and passive scan strategies to maximize coverage and minimize false positives</li>
+    <li>Used ZAP’s automated reporting to generate actionable insights on security vulnerabilities</li>
+    <li>Leveraged GitLab CI/CD to automatically test for vulnerabilities on every deployment to staging</li>
+  </ul>
+
+  <h2>📈 Outcome</h2>
+  <ul>
+    <li>Successfully automated dynamic security testing as part of the CI/CD pipeline</li>
+    <li>Discovered and mitigated high-severity vulnerabilities like XSS and RFI</li>
+    <li>Improved overall application security posture by implementing best practices like CSP headers</li>
+    <li>Verified the effectiveness of security controls through ZAP’s comprehensive scan reports</li>
+  </ul>
+
+  <h2>💡 Takeaways</h2>
+  <p>This exercise reinforced my practical skills in:</p>
+  <ul>
+    <li>Integrating dynamic application security testing (DAST) tools into CI/CD pipelines</li>
+    <li>Automating vulnerability scanning to detect critical issues early in the development lifecycle</li>
+    <li>Using ZAP to detect and remediate vulnerabilities in real-world applications</li>
+    <li>Leveraging DevSecOps principles to shift security left and automate vulnerability detection</li>
+  </ul>
+
+  <p><a href="../index.html">&larr; Back to home</a></p>
+
 </body>
 </html>
+
